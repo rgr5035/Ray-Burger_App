@@ -15,3 +15,6 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
     burger.updateOne();
 })
+
+//Export routes for server.js to use
+module.exports = router;
