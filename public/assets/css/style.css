@@ -3,9 +3,14 @@ body {
     color: blue;
 }
 
-/* .container */
-
 h1 {
-    color: blue;
-    background: blueviolet;
+    text-align: center;
+}
+
+#submit-btn {
+    text-align: center;
+}
+
+#burger-img {
+    align-content: center;
 }
