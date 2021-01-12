@@ -35,19 +35,56 @@ const printQuestionMarks = (num) => {
 
 
 const orm = {
+
     selectAll(tableInput, cb) {
       const query = `SELECT * FROM ${tableInput}`;
       connection.query(query, (err, res) => {
         if (err) {
           throw err;
-        } cb(res);
+        } 
+        
+        cb(res);
       })
     },
-    insertOne() {
 
+    insertOne(table, cols, vals, cb) {
+      let query = `INSERT INTO ${table}`;
+
+      query += ' (';
+      query += cols.toString();
+      query += ') ';
+      query += 'VALUES (';
+      query += printQuestionMarks(vals.length);
+      query += ') ';
+
+      console.log(query);
+
+      connection.query(query, (err, res) => {
+        if (err) {
+          throw (err)
+        } 
+        
+        cb(res);
+      })
     },
-    updateOne() {
 
+    updateOne(table, objColVals, conition, cb) {
+      let query = `UPDATE ${table}`;
+
+      query += ' SET ';
+      query += objToSql(objColVals);
+      query += ' WHERE ';
+      query += condition;
+
+      console.log(query);
+
+      connection.query(query, (err, res) => {
+        if (err) {
+          throw (err)
+        }
+
+        cb(res);
+      })
     }
 };
 
