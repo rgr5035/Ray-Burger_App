@@ -59,12 +59,12 @@ const orm = {
 
       console.log(query);
 
-      connection.query(query, (err, res) => {
+      connection.query(query, (err, result) => {
         if (err) {
           throw (err)
         } 
         
-        cb(res);
+        cb(result);
       })
     },
 
@@ -78,12 +78,12 @@ const orm = {
 
       console.log(query);
 
-      connection.query(query, (err, res) => {
+      connection.query(query, (err, result) => {
         if (err) {
           throw (err)
         }
 
-        cb(res);
+        cb(result);
       })
     }
 };

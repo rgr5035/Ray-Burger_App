@@ -3,14 +3,36 @@ body {
     color: blue;
 }
 
+
+
 h1 {
     text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #submit-btn {
-    text-align: center;
+    margin-top: 3%;
+    align-content: center;
 }
 
 #burger-img {
     align-content: center;
+    margin-bottom: 2%;
+}
+
+#create-form {
+    text-align: center;
+    padding-right: 30%;
+    padding-left: 30%;
+}
+
+#add-burger {
+    padding-bottom: 2%;
 }
