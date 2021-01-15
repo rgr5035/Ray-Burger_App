@@ -59,7 +59,7 @@ const orm = {
 
       console.log(query);
 
-      connection.query(query, (err, result) => {
+      connection.query(query, vals, (err, result) => {
         if (err) {
           throw (err)
         } 
@@ -68,7 +68,7 @@ const orm = {
       })
     },
 
-    updateOne(table, objColVals, conition, cb) {
+    updateOne(table, objColVals, condition, cb) {
       let query = `UPDATE ${table}`;
 
       query += ' SET ';

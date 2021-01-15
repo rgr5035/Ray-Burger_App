@@ -15,9 +15,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-    burger.insertOne(req.body.burger_name, req.body.devoured, (result) => {
-        
-        res.json({ id: result.insertId });
+    burger.insertOne(req.body.burger_name, (result) => {
+        console.log(result);
+        res.redirect('/');
 
     });
     console.log("adding burger");

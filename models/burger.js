@@ -6,8 +6,8 @@ const burger = {
     selectAll(cb) {
         orm.selectAll('burgers', (res) => cb(res));
     },
-    insertOne(cols, vals, cb) {
-        orm.insertOne('burgers', cols, vals, (res) => cb(res));
+    insertOne(name, cb) {
+        orm.insertOne('burgers', ["burger_name", "devoured"], [name, false], cb);
     },
     updateOne(objColVals, condition, cb) {
         orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
